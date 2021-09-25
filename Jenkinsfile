@@ -2,15 +2,10 @@ pipeline{
     agent none
     stages{
         stage('Docker image build'){
-            agent {
-                // Equivalent to "docker build -f Dockerfile.prod .
-                dockerfile {
-                    filename 'Dockerfile.prod'
-                    args  '-t soyfrancisco/galicia-run'
-                }
-            }
+            agent any
             steps{
                 echo 'Dockerfile.prod'
+                sh 'docker build -f Dockerfile.prod -t soyfrancisco/galicia-run .'
             }
         }
 
