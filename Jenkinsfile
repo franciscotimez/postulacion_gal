@@ -13,6 +13,7 @@ pipeline{
             agent any
             steps{
                 echo 'Dockerfile.prod'
+                sh 'docker rm -f galicia'
                 sh 'docker run -d -p 80:80 --name galicia soyfrancisco/galicia-run'
             }
         }
