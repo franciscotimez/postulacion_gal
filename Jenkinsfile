@@ -25,7 +25,7 @@ pipeline{
             steps{
                 echo 'Dockerfile.prod'
                 sh 'docker rm -f galicia'
-                sh 'docker run -d -p 80:80 --name galicia soyfrancisco/galicia-run'
+                sh 'docker run -d -p 5000:5000 --name galicia soyfrancisco/galicia-run'
             }
 
             post {
