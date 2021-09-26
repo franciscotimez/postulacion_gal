@@ -1,5 +1,8 @@
 pipeline{
     agent none
+    options{
+        timeout(time:2, unit:'minutes')
+    }
     stages{
         stage('Docker image build'){
             agent any
