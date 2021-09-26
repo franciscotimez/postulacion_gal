@@ -12,7 +12,7 @@ pipeline{
             }
             post {
                 success {
-                    telegramSend(message: 'Build success!!')
+                    telegramSend(message: 'Build success!!', chatId: 875738072)
                 }
             }
         }
