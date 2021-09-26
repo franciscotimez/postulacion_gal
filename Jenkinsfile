@@ -12,7 +12,10 @@ pipeline{
             }
             post {
                 success {
-                    slackSend color: "good", message: "Build success"
+                    slackSend color: "good", message: "Galicia Build image success"
+                }
+                failure {
+                    slackSend color: "bad", message: "Galicia Build image failure"
                 }
             }
         }
