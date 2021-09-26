@@ -10,6 +10,11 @@ pipeline{
                 echo 'Dockerfile.prod'
                 sh 'docker build -f Dockerfile.prod -t soyfrancisco/galicia-run .'
             }
+            post {
+                success {
+                    telegramSend 'Build success!!'
+                }
+            }
         }
 
         stage('Docker run'){
