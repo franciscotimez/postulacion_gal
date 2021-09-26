@@ -12,7 +12,7 @@ pipeline{
             }
             post {
                 success {
-                    telegramSend 'Build success!!'
+                    telegramSend(message: 'Build success!!')
                 }
             }
         }
