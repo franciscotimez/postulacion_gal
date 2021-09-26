@@ -15,7 +15,7 @@ pipeline{
                     slackSend color: "good", message: "Galicia Build image success"
                 }
                 failure {
-                    slackSend color: "bad", message: "Galicia Build image failure"
+                    slackSend color: "danger", message: "Galicia Build image failure"
                 }
             }
         }
@@ -26,6 +26,12 @@ pipeline{
                 echo 'Dockerfile.prod'
                 sh 'docker rm -f galicia'
                 sh 'docker run -d -p 80:80 --name galicia soyfrancisco/galicia-run'
+            }
+
+            post {
+                success {
+                    slackSend color: "good", message: "Galicia container Updated"
+                }
             }
         }
     }
