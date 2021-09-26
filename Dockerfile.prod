@@ -5,6 +5,7 @@ COPY ["./package.json","./package-lock.json", "./"]
 RUN npm install
 COPY ./public ./public
 COPY ./src ./src
+RUN npm run test
 RUN npm run build
 
 # stage 2 - nginx build image
